@@ -4,6 +4,7 @@
 
 :root {
   /* Brand colors (from Figma) */
+  --coti-primary: #283E86;
   --coti-teal:        #10c2b5;
   --coti-teal-bright: #21b7b5;
   --coti-mint:        #26d0ce;
@@ -15,7 +16,8 @@
   --coti-navy:        #001f3f;
   --coti-navy-2:      #12375d;
   --coti-ink:         #001429;
-  --coti-text:        #43474e;
+  --coti-text:        #6B6B6B;
+  --coti-text-bold:   #43474E;
   --coti-text-soft:   #6b6b6b;
   --coti-text-mute:   #8e8e8f;
   --coti-text-mute-2: #94a3b8;
@@ -25,7 +27,7 @@
   --coti-bg-header:   #f0fffe;
   --coti-bg-about:    #effffd;
   --coti-bg-form:     #f8fbff;
-  --coti-bg-footer:   #e4f2f1;
+  --coti-bg-footer:   #F5F7FF;
   --coti-bg-grey:     #f3f0f0;
   --coti-pill-bg:     #e4fffd;
 
@@ -33,6 +35,8 @@
   --coti-border:      #e4e4e4;
   --coti-border-soft: #f1f5f9;
   --coti-border-2:    #e2e8f0;
+
+  --coti-silver: #F5F7FF;
 
   /* Typography */
   --font-heading: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
@@ -61,6 +65,12 @@ img { max-width: 100%; height: auto; }
 .container-xl { max-width: 1320px; }
 
 /* ============== TYPOGRAPHY ============== */
+.coti-silver-bg {
+    background-color: var(--coti-silver);
+}
+.text-primary {
+    color: var(--coti-primary) !important;
+}
 .eyebrow {
   display: inline-block;
   font-size: 14px;
@@ -113,7 +123,7 @@ img { max-width: 100%; height: auto; }
   width: 100%;
   top: 0;
   z-index: 1030;
-  background: rgba(240, 255, 254, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 8px 24px -16px rgba(0, 0, 0, 0.18);
   transition: box-shadow .25s ease, background .25s ease;
 }
@@ -138,7 +148,7 @@ img { max-width: 100%; height: auto; }
 .site-nav .nav-link.active { font-weight: 600; }
 
 .btn-primary-coti {
-  background: var(--coti-teal);
+  background: var(--coti-primary);
   color: #fff;
   border: none;
   font-family: var(--font-nav);
@@ -152,18 +162,6 @@ img { max-width: 100%; height: auto; }
   transform: translateY(-1px);
   box-shadow: 0 10px 24px -10px rgba(16, 194, 181, .55);
 }
-
-/* small accent bar under brand mark (decorative) */
-.header-accent {
-  height: 2px;
-  width: 48px;
-  background: var(--coti-gradient);
-  position: absolute;
-  left: max(2rem, calc((100vw - 1280px) / 2 + 2rem));
-  bottom: -1px;
-  display: none;
-}
-@media (min-width: 992px) { .header-accent { display: block; } }
 
 /* ============== HERO ============== */
 .hero {
@@ -182,8 +180,8 @@ img { max-width: 100%; height: auto; }
 .hero-bg-image {
     position: absolute;
     inset: 0;
-    background: url('../img/infinite.png') right center / contain no-repeat;
-    transform: translate(-7%, 50%) scale(1.3) rotate(30deg);
+    background: url('../img/Dd-rendering New 2.png') right center / contain no-repeat;
+    transform: translate(-12%, 35%) scale(1) rotate(30deg);
     transform-origin: right bottom;
     filter: brightness(1.25) saturate(1.1);
 }
@@ -192,8 +190,9 @@ img { max-width: 100%; height: auto; }
   /* background:
     linear-gradient(249deg, rgba(4,127,112,0.55) 30%, rgba(37,89,189,0.55) 95%),
     linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.55) 100%);*/
-    background: radial-gradient(circle at 70% 60%, rgba(0,255,200,0.15), transparent 40%), linear-gradient(120deg, #020c1b, #071e3d, #0c3b4a, #145a4f, #1e7a63);
-  mix-blend-mode:hard-light;
+    background: #00000C;
+background: linear-gradient(90deg,rgba(0, 0, 12, 1) 0%, rgba(0, 11, 13, 1) 100%);
+    mix-blend-mode: soft-light;
 }
 .hero-content { max-width: 900px; }
 .hero-title {
@@ -214,7 +213,7 @@ img { max-width: 100%; height: auto; }
   font-weight: 700;
   font-size: clamp(3rem, 9vw, 6rem);
   letter-spacing: -3px;
-  background: linear-gradient(90deg, #0f75bc 0%, #05a08c 100%);
+  background: linear-gradient(90deg, #0F75BC 0%, #05A08C 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -429,11 +428,11 @@ img { max-width: 100%; height: auto; }
   cursor: pointer;
   transition: all .25s ease;
 }
-.enquiry-chip:hover { color: var(--coti-navy); border-color: var(--coti-teal); }
+.enquiry-chip:hover { color: var(--coti-navy); border-color: var(--coti-primary); }
 .enquiry-chip.is-active {
-  background: var(--coti-teal);
+  background: var(--coti-primary);
   color: #fff;
-  border-color: var(--coti-teal);
+  border-color: var(--coti-primary);
   box-shadow: 0 8px 20px -10px rgba(16, 194, 181, .55);
 }
 
@@ -467,14 +466,14 @@ img { max-width: 100%; height: auto; }
 }
 .form-control-coti:focus,
 .form-select-coti:focus {
-  border-color: var(--coti-teal);
+  border-color: var(--coti-primary);
   box-shadow: 0 0 0 3px rgba(16, 194, 181, .15);
   outline: none;
 }
 .form-control-coti::placeholder { color: var(--coti-placeholder); }
 
 .btn-submit-coti {
-  background: var(--coti-teal);
+  background: var(--coti-primary);
   color: #fff;
   border: none;
   border-radius: 900px;
@@ -621,14 +620,13 @@ img { max-width: 100%; height: auto; }
 .insight-title {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: clamp(2rem, 5vw, 4.5rem);
-  line-height: 1.15;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.3;
   letter-spacing: -0.5px;
   color: #fff;
   position: relative;
   z-index: 1;
   margin: 0 0 14px;
-  max-width: 14ch;
 }
 .insight-subtitle {
   color: var(--coti-text-mute-2);
@@ -650,7 +648,7 @@ img { max-width: 100%; height: auto; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--coti-teal);
+  background: var(--coti-primary);
   color: #fff;
   padding: 22px 44px;
   border-radius: 90px;
@@ -670,6 +668,11 @@ img { max-width: 100%; height: auto; }
   box-shadow: 0 18px 40px -16px rgba(16, 194, 181, .55);
 }
 
+.btn-pill-primary.outlined {
+    background-color: white;
+    color: var(--coti-primary);
+    border: 2px solid var(--coti-primary);
+}
 /* =============================================================
    CAPABILITIES PAGE — HERO
    ============================================================= */
@@ -679,25 +682,6 @@ img { max-width: 100%; height: auto; }
   position: relative;
   overflow: hidden;
   padding: clamp(120px, 14vw, 220px) 0 clamp(80px, 10vw, 140px);
-}
-.cap-hero-line {
-  position: absolute; inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse at 50% 0%, rgba(45,212,191,.12), transparent 55%),
-    radial-gradient(ellipse at 100% 100%, rgba(37,89,189,.18), transparent 50%),
-    linear-gradient(180deg, rgba(0,31,63,.0) 0%, rgba(0,31,63,.6) 100%);
-}
-.cap-hero-line::before {
-  content: '';
-  position: absolute;
-  left: -10%; right: -10%;
-  top: 60%;
-  height: 600px;
-  border-radius: 50%;
-  border: 2px solid rgba(45,212,191,.18);
-  filter: blur(.4px);
-  transform: translateY(-50%);
 }
 .cap-hero-info { position: relative; z-index: 1; }
 .cap-hero-title {
@@ -757,9 +741,9 @@ img { max-width: 100%; height: auto; }
   position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(180deg, rgba(0,0,0,0) 41%, rgba(0,31,63,.9) 99%);
 }
-.cap-pillar-media-build     { background-image: url('../img/cap-build.png'); }
-.cap-pillar-media-integrate { background-image: url('../img/cap-integrate.png'); }
-.cap-pillar-media-scale     { background-image: url('../img/cap-scale.png'); }
+.cap-pillar-media-build     { background-image: url('../img/sm-build.jpg'); }
+.cap-pillar-media-integrate { background-image: url('../img/sm-dist.jpg'); }
+.cap-pillar-media-scale     { background-image: url('../img/sm-scale.jpg'); }
 
 .cap-pillar-media-build::after,
 .cap-pillar-media-integrate::after,
@@ -889,6 +873,7 @@ img { max-width: 100%; height: auto; }
    CAPABILITIES — PARTNERSHIP CARDS
    ============================================================= */
 .cap-partnership { padding: clamp(80px, 11vw, 160px) 0; background: #fff; }
+
 .partner-card {
   background: #f3fbff;
   border-top: 4px solid #38bdf8;
@@ -902,8 +887,8 @@ img { max-width: 100%; height: auto; }
 }
 .partner-card--gov   { background: #f6f7ff; border-top-color: #7481ff; }
 .partner-card--dist  { background: #f0fffd; border-top-color: var(--coti-mint); }
-.partner-card--featured { transform: translateY(-30px); }
 .partner-card-title {
+    min-height: 150px;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: clamp(1.5rem, 2.3vw, 2.25rem);
@@ -948,7 +933,7 @@ img { max-width: 100%; height: auto; }
    CAPABILITIES — WHY PARTNER TABLE
    ============================================================= */
 .cap-why {
-  background: var(--coti-bg-grey);
+  background: #F5F7FF;
   padding: clamp(80px, 11vw, 160px) 0;
 }
 .why-table {
@@ -1003,12 +988,12 @@ img { max-width: 100%; height: auto; }
   box-shadow: 0 30px 80px -50px rgba(0, 31, 63, .2);
 }
 .origin-card {
-  background: var(--coti-pill-bg);
   padding: clamp(36px, 5vw, 64px);
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 }
 .origin-title {
   font-family: var(--font-heading);
@@ -1090,6 +1075,7 @@ img { max-width: 100%; height: auto; }
 .core-card {
   background: #fff;
   border-radius: 16px;
+  overflow: hidden;
   padding: 32px 30px 28px;
   display: flex;
   flex-direction: column;
@@ -1102,9 +1088,6 @@ img { max-width: 100%; height: auto; }
   box-shadow: 0 28px 60px -28px rgba(0,0,0,.22);
 }
 .core-card-icon {
-  width: 86px;
-  height: 86px;
-  border-radius: 12px;
   background: var(--coti-navy);
   color: #fff;
   display: grid; place-items: center;
@@ -1112,13 +1095,7 @@ img { max-width: 100%; height: auto; }
   margin-bottom: 24px;
   position: relative;
   overflow: hidden;
-}
-.core-card-icon::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, transparent 60%, rgba(38,208,206,.25));
-  pointer-events: none;
+  min-height: 205px;
 }
 .core-card-title {
   font-family: var(--font-heading);
@@ -1138,7 +1115,7 @@ img { max-width: 100%; height: auto; }
   background: none;
   border: 0;
   padding: 12px 0 0;
-  color: var(--coti-teal-deep);
+  color: var(--coti-primary);
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 11px;
@@ -1146,12 +1123,11 @@ img { max-width: 100%; height: auto; }
   text-transform: uppercase;
   display: inline-flex; align-items: center;
   gap: 4px;
-  border-top: 1px solid var(--coti-border);
   margin-top: auto;
   cursor: pointer;
   transition: color .2s ease, gap .2s ease;
 }
-.core-card-link:hover { color: var(--coti-teal); gap: 10px; }
+.core-card-link:hover { gap: 10px; }
 
 /* =============================================================
    ABOUT — ROLE IN INDUSTRY
@@ -1163,17 +1139,20 @@ img { max-width: 100%; height: auto; }
   line-height: 1.75;
   margin: 0 0 18px;
 }
-
+.role-text.fw-bold,
+.role-text.fw-semibold {
+    color: var(--coti-text-bold);
+}
 /* =============================================================
    ABOUT — LEADERSHIP
    ============================================================= */
 .leadership {
-  background: #fff;
+  background: #F5F7FF;
   padding: 0 0 clamp(80px, 10vw, 140px);
 }
 .leader-row {
   display: grid;
-  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 560px) minmax(0, 1fr);
   gap: clamp(28px, 4vw, 64px);
   align-items: start;
   padding: clamp(40px, 6vw, 64px) 0;
@@ -1181,7 +1160,7 @@ img { max-width: 100%; height: auto; }
 }
 .leader-row:last-child { border-bottom: 0; }
 .leader-row--reverse {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 560px);
 }
 .leader-row--reverse .leader-photo-wrap { order: 2; }
 .leader-row--reverse .leader-bio { order: 1; }
@@ -1190,10 +1169,10 @@ img { max-width: 100%; height: auto; }
   position: absolute;
   top: 18px; left: 18px;
   z-index: 2;
-  background: rgba(0, 31, 63, .85);
-  color: #fff;
+  background: #94A3B8;
+  color: var(--coti-primary);
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: 4px;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 10px;
@@ -1237,7 +1216,7 @@ img { max-width: 100%; height: auto; }
 }
 .leader-text {
   color: var(--coti-text);
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.7;
   margin: 0 0 14px;
 }
@@ -1252,7 +1231,7 @@ img { max-width: 100%; height: auto; }
   transition: background .2s ease, transform .2s ease;
 }
 .leader-linkedin:hover {
-  background: var(--coti-teal);
+  background: var(--coti-primary);
   color: #fff;
   transform: translateY(-2px);
 }
@@ -1286,7 +1265,6 @@ img { max-width: 100%; height: auto; }
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  gap: clamp(8px, 1.4vw, 18px);
   flex-wrap: nowrap;
 }
 .eco-flow-item {
@@ -1343,35 +1321,45 @@ img { max-width: 100%; height: auto; }
   flex: 1 1 auto;
   display: flex; align-items: center;
   min-width: 20px;
-  padding-top: clamp(30px, 3.5vw, 40px);
+  margin-top: -70px;
 }
 .eco-flow-line {
   width: 100%;
   height: 1px;
-  border-top: 1.5px dashed rgba(38, 208, 206, .55);
+  border-top: 1.5px solid #CBD5E1;
   position: relative;
 }
 .eco-flow-line::after {
-  content: '';
-  position: absolute;
-  right: -1px; top: 50%;
-  width: 0; height: 0;
-  border-left: 6px solid var(--coti-mint);
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  transform: translateY(-50%);
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-left: 6px solid #CBD5E1;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    transform: translateY(-50%);
 }
 .eco-loop-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 28px;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 11px;
   letter-spacing: 2px;
   color: var(--coti-text-mute);
   text-transform: uppercase;
+  border-top: none !important;
+  border: 2px dashed rgba(37, 89, 189, .3);
+  border-bottom-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+  min-height: 50px;
+  max-width: 90%;
+  margin: auto;
+  position: relative;
+}
+.eco-loop-label p {
+    position: absolute;
+    bottom: -17%;
+    width: 100%;
 }
 .eco-loop-line {
   width: 50px; height: 1px;
@@ -1391,10 +1379,11 @@ img { max-width: 100%; height: auto; }
    ECOSYSTEM — VALUE CHAIN CARDS
    ============================================================= */
 .eco-value-chain {
-  background: var(--coti-bg-about);
+  background: var(--coti-silver);
   padding: clamp(80px, 10vw, 140px) 0;
 }
 .value-card {
+    border: 2px solid transparent;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
@@ -1407,7 +1396,8 @@ img { max-width: 100%; height: auto; }
 }
 .value-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 30px 60px -30px rgba(0, 31, 63, .3);
+  border: 2px solid var(--coti-primary);
+  background: #F3F9FF;
 }
 .value-card-body {
   padding: clamp(40px, 5vw, 64px);
@@ -1416,7 +1406,6 @@ img { max-width: 100%; height: auto; }
   justify-content: center;
   gap: 24px;
 }
-.value-card-body--mint { background: var(--coti-pill-bg); }
 .value-card-logo {
   max-width: 240px;
   max-height: 80px;
@@ -1451,7 +1440,7 @@ img { max-width: 100%; height: auto; }
   line-height: 1.6;
   margin: 0;
 }
-.value-card-btn { align-self: flex-start; padding: 14px 36px; font-size: 13px; }
+.value-card-btn { border: none; align-self: flex-start; padding: 14px 36px; font-size: 13px; }
 .value-card-media {
   background-size: cover;
   background-position: center;
