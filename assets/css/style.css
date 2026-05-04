@@ -13,7 +13,7 @@
   --coti-blue:        #0f75bc;
 
   /* Neutrals */
-  --coti-navy:        #001f3f;
+  --coti-navy:        #001F3F;
   --coti-navy-2:      #12375d;
   --coti-ink:         #001429;
   --coti-text:        #6B6B6B;
@@ -25,10 +25,10 @@
 
   /* Surfaces */
   --coti-bg-header:   #f0fffe;
-  --coti-bg-about:    #effffd;
+  --coti-bg-about:    #F5F7FF;
   --coti-bg-form:     #f8fbff;
   --coti-bg-footer:   #F5F7FF;
-  --coti-bg-grey:     #f3f0f0;
+  --coti-bg-grey:     #F3F0F0;
   --coti-pill-bg:     #e4fffd;
 
   /* Borders */
@@ -582,15 +582,7 @@ background: linear-gradient(90deg,rgba(0, 0, 12, 1) 0%, rgba(0, 11, 13, 1) 100%)
   position: relative;
   overflow: hidden;
 }
-.insight-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 100% 0%, rgba(38,208,206,.15), transparent 35%),
-    radial-gradient(circle at 0% 100%, rgba(15,117,188,.18), transparent 40%);
-  pointer-events: none;
-}
+
 .insight-meta {
   display: flex; flex-wrap: wrap;
   align-items: center;
@@ -907,7 +899,7 @@ background: linear-gradient(90deg,rgba(0, 0, 12, 1) 0%, rgba(0, 11, 13, 1) 100%)
   display: inline-flex;
   align-self: flex-start;
   align-items: center;
-  background: var(--coti-mint);
+  background: #283E86;
   color: #fff;
   font-family: var(--font-heading);
   font-weight: 700;
@@ -988,6 +980,7 @@ background: linear-gradient(90deg,rgba(0, 0, 12, 1) 0%, rgba(0, 11, 13, 1) 100%)
   box-shadow: 0 30px 80px -50px rgba(0, 31, 63, .2);
 }
 .origin-card {
+    background: #F5F7FF;
   padding: clamp(36px, 5vw, 64px);
   height: 100%;
   display: flex;
@@ -1148,7 +1141,6 @@ background: linear-gradient(90deg,rgba(0, 0, 12, 1) 0%, rgba(0, 11, 13, 1) 100%)
    ============================================================= */
 .leadership {
   background: #F5F7FF;
-  padding: 0 0 clamp(80px, 10vw, 140px);
 }
 .leader-row {
   display: grid;
@@ -1379,7 +1371,7 @@ background: linear-gradient(90deg,rgba(0, 0, 12, 1) 0%, rgba(0, 11, 13, 1) 100%)
    ECOSYSTEM — VALUE CHAIN CARDS
    ============================================================= */
 .eco-value-chain {
-  background: var(--coti-silver);
+  background: #F3F0F0;
   padding: clamp(80px, 10vw, 140px) 0;
 }
 .value-card {
@@ -1542,18 +1534,6 @@ background: linear-gradient(90deg,rgba(0, 0, 12, 1) 0%, rgba(0, 11, 13, 1) 100%)
   }
 
   /* Floating/pulsing decorative shapes on dark surfaces */
-  .insight-card::before,
-  .cap-hero::before {
-    content: '';
-    position: absolute;
-    width: 280px; height: 280px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(38,208,206,.25), transparent 65%);
-    top: -80px; right: -80px;
-    animation: float-glow 14s ease-in-out infinite;
-    z-index: 0;
-    pointer-events: none;
-  }
   .cap-hero { position: relative; }
 
   /* Ripple on button hover */
